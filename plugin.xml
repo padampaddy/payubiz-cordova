@@ -28,7 +28,7 @@
         <source-file src="src/android/PayUBizCordova.java" target-dir="src/com/espranza/cordova/payubiz/" />
         <source-file src="src/android/PayUMainActivity.java" target-dir="src/com/espranza/cordova/payubiz/" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-        <lib-file src="src/android/libs/sdkui-release.aar" />
+        <lib-file src="src/android/libs/payubiz.aar" />
 
     </platform>
 </plugin>
