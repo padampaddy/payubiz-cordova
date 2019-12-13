@@ -1,1 +1,1 @@
-CC avenue Cordova plugin
+PayU Biz Cordova plugin
