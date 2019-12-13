@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class PayUMainActivity extends AppCompatActivity {
 
     private String merchantKey, userCredentials;
 
