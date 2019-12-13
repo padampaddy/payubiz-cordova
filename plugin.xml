@@ -19,7 +19,7 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </edit-config>
-        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity" mode="merge">
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity">
             <activity android:name="com.espranza.cordova.payubiz.PayUMainActivity" />
         </edit-config>
         <source-file src="src/android/PayUBizCordova.java" target-dir="src/com/espranza/cordova/payubiz/" />
