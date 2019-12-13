@@ -11,9 +11,6 @@
             <feature name="PayUBizCordova">
                 <param name="android-package" value="com.espranza.cordova.payubiz.PayUBizCordova" />
             </feature>
-            <feature name="PayUMainActivity">
-                <param name="android-package" value="com.espranza.cordova.payubiz.PayUMainActivity" />
-            </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
 
