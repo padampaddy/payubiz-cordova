@@ -1,0 +1,1 @@
+CC avenue Cordova plugin

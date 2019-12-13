@@ -1,0 +1,17 @@
+{
+  "name": "com.espranza.cordova.payubiz",
+  "version": "1.0.0",
+  "description": "PayUBiz Plugin",
+  "cordova": {
+    "id": "com.espranza.cordova.payubiz",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Espranza Innovations Pvt Ltd",
+  "license": "Apache 2.0"
+}

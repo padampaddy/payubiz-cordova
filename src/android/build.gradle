@@ -1,0 +1,13 @@
+repositories{
+    mavenCentral()
+    jcenter()
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+implementation fileTree(include: '*.aar', dir: 'libs')	
+	implementation "com.payu.india:payu-sdk:4.4.8"
+}
