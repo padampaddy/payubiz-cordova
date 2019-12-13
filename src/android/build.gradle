@@ -10,4 +10,5 @@ repositories{
 dependencies {
 implementation fileTree(include: '*.aar', dir: 'libs')	
 	implementation "com.payu.india:payu-sdk:4.4.8"
+	implementation "com.google.code.gson:gson:2.8.6"
 }
