@@ -1,9 +1,8 @@
 package com.espranza.cordova.payubiz;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Toast;
 
 import com.payu.india.Extras.PayUChecksum;
@@ -20,7 +19,7 @@ import com.payu.payuui.Activity.PayUBaseActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PayUMainActivity extends AppCompatActivity {
+public class PayUMainActivity extends Activity {
 
     private PaymentParams mPaymentParams;
     private JSONObject jsonObject;
@@ -35,6 +34,7 @@ public class PayUMainActivity extends AppCompatActivity {
         Payu.setInstance(this);
         try {
             jsonObject =  new JSONObject(getIntent().getStringExtra("parameters"));
+            navigateToBaseActivity();
         } catch (JSONException e) {
             e.printStackTrace();
             setResult(0);
@@ -64,12 +64,12 @@ public class PayUMainActivity extends AppCompatActivity {
     /**
      * This method prepares all the payments params to be sent to PayuBaseActivity.java
      */
-    public void navigateToBaseActivity(View view) throws JSONException {
+    public void navigateToBaseActivity() throws JSONException {
 
         String merchantKey = jsonObject.getString("merchantKey");
         String amount = jsonObject.getString("amount");
         String email = jsonObject.getString("email");
-        String value = jsonObject.getString("environment");
+        String value = jsonObject.getString("value");
         String firstName = jsonObject.getString("firstName");
         String phone = jsonObject.getString("phone");
         String txnId = jsonObject.getString("txnId");
@@ -80,6 +80,7 @@ public class PayUMainActivity extends AppCompatActivity {
         String udf3 = jsonObject.getString("udf3");
         String udf4 = jsonObject.getString("udf4");
         String udf5 = jsonObject.getString("udf5");
+        salt = jsonObject.getString("salt");
         int environment;
         if (value.equals("test"))
             environment = PayuConstants.STAGING_ENV;

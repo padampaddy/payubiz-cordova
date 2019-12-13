@@ -48,8 +48,7 @@ public class PayUBizCordova extends CordovaPlugin {
         mCallbackContext = callbackContext;
         Log.d(TAG, "launchPayUMoneyFlow(): " + jsonObject);
         Intent i = new Intent(cordova.getActivity(), PayUMainActivity.class);
-        Gson gson = new Gson();
-        i.putExtra("orderDetails", gson.toJson(jsonObject));
+        i.putExtra("parameters", jsonObject.toString());
         cordova.startActivityForResult(this,i, 1);
     }
 
