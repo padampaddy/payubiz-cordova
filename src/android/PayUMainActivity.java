@@ -32,7 +32,6 @@ public class PayUMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         Payu.setInstance(this);
         try {
             jsonObject =  new JSONObject(getIntent().getStringExtra("parameters"));
