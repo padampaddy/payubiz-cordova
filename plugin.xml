@@ -12,8 +12,8 @@
             <feature name="PayUBizCordova">
                 <param name="android-package" value="com.espranza.cordova.payubiz.PayUBizCordova" />
             </feature>
-            <feature name="MainActivity">
-                <param name="android-package" value="com.espranza.cordova.payubiz.MainActivity" />
+            <feature name="PayUMainActivity">
+                <param name="android-package" value="com.espranza.cordova.payubiz.PayUMainActivity" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
@@ -24,10 +24,10 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </edit-config>
         <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
-            <activity android:name="com.espranza.cordova.payubiz.MainActivity" />
+            <activity android:name="com.espranza.cordova.payubiz.PayUMainActivity" />
         </edit-config>
         <source-file src="src/android/PayUBizCordova.java" target-dir="src/com/espranza/cordova/payubiz/" />
-        <source-file src="src/android/MainActivity.java" target-dir="src/com/espranza/cordova/payubiz/" />
+        <source-file src="src/android/PayUMainActivity.java" target-dir="src/com/espranza/cordova/payubiz/" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
