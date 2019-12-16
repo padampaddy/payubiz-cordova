@@ -49,40 +49,26 @@ public class PayUBizCordova extends CordovaPlugin {
         Log.d(TAG, "launchPayUMoneyFlow(): " + jsonObject);
         Intent i = new Intent(cordova.getActivity(), PayUMainActivity.class);
         i.putExtra("parameters", jsonObject.toString());
-        cordova.startActivityForResult(this,i, 1);
+        cordova.startActivityForResult(this, i, 1);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 1) {
-            switch (resultCode) {
-                case 1:
-                    if (mCallbackContext != null) {
-                        JSONObject json = new JSONObject();
-                        Bundle bundle = intent.getBundleExtra("result");
-                        Set<String> keys = bundle.keySet();
-                        for (String key : keys) {
-                            try {
-                                json.put(key, JSONObject.wrap(bundle.get(key)));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                                mCallbackContext.error(e.getMessage());
-                            }
-                        }
+            if (resultCode == 1) {
+                if (mCallbackContext != null) {
+                    try {
+                        JSONObject json = new JSONObject(intent.getStringExtra("payuData"));
                         mCallbackContext.success(json);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        mCallbackContext.error(e.getMessage());
                     }
-
-                    break;
-                case 2:
-                    if (mCallbackContext != null) {
-                        mCallbackContext.error(intent.getStringExtra("result"));
-                    }
-                    break;
-                case 3:
-                    if (mCallbackContext != null) {
-                        mCallbackContext.error("Transaction Cancelled.");
-                    }
-                    break;
+                }
+            } else {
+                if (mCallbackContext != null) {
+                    mCallbackContext.error("Transaction Failed");
+                }
             }
         }
         super.onActivityResult(requestCode, resultCode, intent);

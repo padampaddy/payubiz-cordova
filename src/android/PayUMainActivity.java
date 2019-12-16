@@ -51,7 +51,6 @@ public class PayUMainActivity extends Activity {
             if (data != null) {
                 Intent i = new Intent();
                 i.putExtra("payuData",data.getStringExtra("payu_response"));
-                i.putExtra("merchantData", data.getStringExtra("result"));
                 setResult(1,i);
                 finish();
             } else {
