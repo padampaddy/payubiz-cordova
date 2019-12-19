@@ -1,11 +1,12 @@
 {
   "name": "com.espranza.cordova.payubiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PayUBiz Plugin",
   "cordova": {
     "id": "com.espranza.cordova.payubiz",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "keywords": [
