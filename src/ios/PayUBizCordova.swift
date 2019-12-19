@@ -1,5 +1,5 @@
 @objc(PayUBizCordova) class PayUBizCordova : CDVPlugin {
-  func echo(command: CDVInvokedUrlCommand) {
+  func showPaymentView(command: CDVInvokedUrlCommand) {
     var pluginResult = CDVPluginResult(
       status: CDVCommandStatus_ERROR
     )
