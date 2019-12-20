@@ -1,5 +1,7 @@
-@interface Echo : CDVPlugin
+#import <Cordova/CDVPlugin.h>
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
+@interface PayUBizCordova : CDVPlugin
+
+- (void)showPaymentView:(CDVInvokedUrlCommand*)command;
 
 @end

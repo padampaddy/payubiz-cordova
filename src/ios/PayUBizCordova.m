@@ -1,9 +1,9 @@
-#import "Echo.h"
+#import "PayUBizCordova.h"
 #import <Cordova/CDVPlugin.h>
 
-@implementation Echo
+@implementation PayUBizCordova
 
-- (void)echo:(CDVInvokedUrlCommand*)command
+- (void)showPaymentView:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
     NSString* echo = [command.arguments objectAtIndex:0];
