@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.espranza.cordova.payubiz" version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.espranza.cordova.payubiz" version="1.0.1">
 
-    <name>CCAvenue Cordova</name>
-    <js-module name="CCAvenue Cordova" src="www/payUBiz.js">
+    <name>PayuBiz Cordova</name>
+    <js-module name="PayUBiz Cordova" src="www/payUBiz.js">
         <clobbers target="cordova.plugins.payUBiz" />
     </js-module>
 
@@ -12,7 +12,7 @@
                 <param name="android-package" value="com.espranza.cordova.payubiz.PayUBizCordova" />
             </feature>
         </config-file>
-        <config-file parent="/manifest/application" target="AndroidManifest.xml" >
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <activity android:name="com.espranza.cordova.payubiz.PayUMainActivity" />
         </config-file>
 
@@ -21,12 +21,21 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         </edit-config>
-        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity" mode="merge">
-        </edit-config>
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity" mode="merge"></edit-config>
         <source-file src="src/android/PayUBizCordova.java" target-dir="src/com/espranza/cordova/payubiz/" />
         <source-file src="src/android/PayUMainActivity.java" target-dir="src/com/espranza/cordova/payubiz/" />
         <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
         <lib-file src="src/android/libs/sdkui.aar" />
 
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PayUBizCordova">
+                <param name="ios-package" value="PayUBizCordova" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/PayUBizCordova.m" />
+        <header-file src="src/ios/PayUBizCordova.h" />
     </platform>
 </plugin>
