@@ -29,7 +29,7 @@
     </platform>
 
     <platform name="ios">
-        <config-file parent="/*" target="res/xml/config.xml">
+        <config-file target="config.xml" parent="/*">
             <feature name="PayUBizCordova">
                 <param name="ios-package" value="PayUBizCordova" />
             </feature>
