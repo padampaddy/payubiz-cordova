@@ -5,17 +5,6 @@
     <js-module name="PayUBiz Cordova" src="www/payUBiz.js">
         <clobbers target="cordova.plugins.payUBiz" />
     </js-module>
-  <platform name="ios">
-        <config-file parent="/*" target="config.xml">
-            <feature name="PayUBizCordova">
-                <param name="ios-package" value="PayUBizCordova" />
-            </feature>
-        </config-file>
-        <source-file src="src/ios/PayUBizCordova.swift" />
-        <framework src="src/ios/SDKs/PayUCustomBrowser.framework" custom="true" embed="true"/>
-        <framework src="src/ios/SDKs/PayUMoneyCoreSDK.framework" custom="true" embed="true"/>
-        <framework src="src/ios/SDKs/PlugNPlay.framework" custom="true" embed="true"/>
-    </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="PayUBizCordova">
